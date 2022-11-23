@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:cardCornerRadius="8dp"
+    app:cardMaxElevation="5dp"
+    app:cardElevation="0dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="2dp"
+    app:contentPadding="5dp"
+    app:cardBackgroundColor="@color/white">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pickUpDropLayoutInRideHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
+            android:textStyle="bold"
+            android:text="0:00 PM"
+            android:textSize="12dp"
+            android:visibility="gone"
+            android:layout_marginEnd="15dp"
+            android:textColor="@color/lightGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/pickUpTextView_main_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/pickUpTextView_main_layout"
+            android:id="@+id/pickup_time_for_cancelled"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
+            android:textStyle="bold"
+            android:text="0:00 PM"
+            android:visibility="gone"
+            android:layout_marginEnd="15dp"
+            android:textSize="12dp"
+            android:textColor="@color/lightGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/dropTextView_main_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dropTextView_main_layout"
+            android:id="@+id/dropoff_time_for_cancelled"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toStartOf="@id/driver_details"
+            android:background="@drawable/card_layout"
+            android:id="@+id/pickUpTextView_main_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pickUpTextView_main_ride_history"
+                android:layout_width="wrap_content"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:layout_height="0dp"
+                android:textColorHint="@color/lightGrey"
+                app:hintEnabled="true"
+                android:clickable="false"
+                android:enabled="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pickup_from_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:minWidth="120dp"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:maxWidth="200dp"
+                    android:layout_marginStart="40dp"
+                    android:singleLine="true"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="@string/hintForPickup"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ems="5"
+                    android:maxLength="12"
+                    android:ellipsize="end"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/important_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                android:fontFamily="@font/open_sans"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/pickUpTextView_main_ride_history"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/pickUpTextView_main_ride_history"-->
+            <!--                android:text="0:00"-->
+            <!--                android:id="@+id/pickup_time_ride_history"-->
+            <!--                android:textSize="12dp"-->
+            <!--                android:textColor="@color/lightGrey"/>-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pickUpIndicator"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/pickup_location"
+            app:layout_constraintBottom_toBottomOf="@+id/pickUpTextView_main_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/pickUpTextView_main_layout" />
+        <LinearLayout
+            android:id="@+id/driver_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="@id/pickUpTextView_main_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/line_divider1_ride_history">
+
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="45dp"
+                android:focusableInTouchMode="true"
+                android:padding="4dp"
+                android:layout_marginStart="0dp"
+                android:src="@drawable/tigorev"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:id="@+id/driver_name_car_number_layout"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/drivers_name_ride_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="D"
+                    android:textColor="@color/black"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/car_numberr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/open_sans"
+                    android:layout_weight="1"
+                    android:text="car_id"
+                    android:textColor="@color/lightGrey"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textSize="10dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/open_sans"
+                    android:id="@+id/call_button_on_upcoming_ride"
+                    android:textColor="@color/teal_700"
+                    android:textAlignment="center"
+                    android:text="Call driver"
+                    android:textSize="10dp"
+                    android:drawableLeft="@drawable/phone_in_talk_outline"
+                    app:layout_constraintBottom_toBottomOf="@id/from_to_text_layout"
+                    android:background="@drawable/circular_cancel_button"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:layout_marginTop="3dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:drawablePadding="3dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="0dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:id="@+id/dropTextView_main_layout"
+            android:background="@drawable/card_layout"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toStartOf="@id/driver_details"
+            app:layout_constraintTop_toBottomOf="@+id/pickUpTextView_main_layout"
+            app:layout_constraintStart_toStartOf="parent">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width = "wrap_content"
+                android:layout_height = "0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/dropTextView_main_ride_history"
+                android:background="@android:color/transparent"
+                app:hintEnabled="true"
+                app:boxStrokeWidth="0dp"
+                android:clickable="false"
+                android:enabled="false"
+                app:boxStrokeWidthFocused="0dp"
+                android:minWidth="100dp"
+                android:maxWidth="200dp"
+                android:textColorHint="@color/lightGrey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/lightGrey"
+                    android:minWidth="100dp"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    android:maxWidth="200dp"
+                    android:maxLines="1"
+                    android:layout_marginStart="40dp"
+                    android:maxLength="12"
+                    android:ems="5"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:hint="@string/hintForWhereto"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/open_sans"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/important_text"
+                    android:id="@+id/where_to_edit_text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/dropTextView_main_ride_history"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/dropTextView_main_ride_history"-->
+            <!--                android:text=""-->
+            <!--                android:fontFamily="@font/open_sans"-->
+            <!--                android:layout_marginEnd="8dp"-->
+            <!--                android:textSize="12dp"-->
+            <!--                android:id="@+id/drop_time_ride_history"-->
+            <!--                android:textColor="@color/lightGrey"/>-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dropIndicator"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="7.5dp"
+            android:background="@drawable/ic_baseline_location_on_24_teal_green"
+            app:layout_constraintBottom_toBottomOf="@+id/dropTextView_main_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dropTextView_main_layout" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@color/veryLightGrey"
+            app:layout_constraintBottom_toTopOf="@+id/dropIndicator"
+            app:layout_constraintEnd_toEndOf="@+id/pickUpIndicator"
+            app:layout_constraintStart_toStartOf="@+id/pickUpIndicator"
+            app:layout_constraintTop_toBottomOf="@+id/pickUpIndicator" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:background="@color/veryLightGrey"
+            app:layout_constraintTop_toBottomOf="@id/dropTextView_main_layout"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:id="@+id/line_divider1_ride_history"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/line_divider1_ride_history">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:id="@+id/trip_time_in_history"
+                android:text=""
+                android:textColor="@color/lightGrey"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:background="@drawable/circular_cancel_button"
+                app:layout_constraintBottom_toBottomOf="@id/map11"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Upcoming"
+                android:paddingTop="5dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/teal_700"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:fontFamily="@font/open_sans"
+                android:textSize="12dp"
+                android:id="@+id/upcomingg_view_ui"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:background="@drawable/light_gray_view"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Cancel"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/lightGrey"
+                    android:textAllCaps="true"
+                    android:visibility="gone"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="12dp"
+                    android:id="@+id/cancel_upcoming_view_ui"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:background="@drawable/green_button_enabled"
+                    android:text="start ride"
+                    android:textAllCaps="true"
+                    android:id="@+id/start_ride_button_upcoming"
+                    android:paddingTop="8dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/button_text_size"
+                    android:visibility="gone"
+                    android:paddingBottom="8dp"
+                    android:fontFamily="@font/open_sans"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:textStyle="bold"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:visibility="gone"
+                    android:id="@+id/shine_effect_in_main_upcoming"
+                    android:layout_marginStart="-160dp"
+                    android:src="@drawable/shine_effect"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_divider1_ride_history"
+            android:orientation="vertical"
+            android:id="@+id/total_price_view">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lightGrey"
+                android:textSize="12dp"
+                android:fontFamily="@font/open_sans"
+                android:text="Total Amount"
+                android:layout_gravity="center"
+                android:id="@+id/total_price_heading"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Rs"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_heading_size"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/price_ongoing_ride_history"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text=""
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_heading_size"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

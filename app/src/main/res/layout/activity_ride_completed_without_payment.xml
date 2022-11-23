@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:id="@+id/heading_layout"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="Trip Information"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/map_layout"
+        android:layout_weight="3">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cameraTargetLat="19.2295"
+            app:cameraTargetLng="72.8240"
+            app:cameraZoom="16" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/carbonEmissionSavedlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/light_green_background"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/lottie_anim"
+                app:lottie_rawRes="@raw/energy_saving_anim"
+                app:layout_constraintTop_toBottomOf="@id/line_divider1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:lottie_speed="0.75"
+                android:layout_marginStart="12dp"
+                app:lottie_colorFilter="@color/teal_700"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
+            <TextView
+                android:id="@+id/co2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/co2_text"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/button_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/carbonEmissionSaved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/open_sans"
+                android:text=" Emission saved in ride : "
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/button_text_size"
+                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/carbonEmissionSavedValue_rideCompletedWithoutPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:fontFamily="@font/open_sans_bold"
+            android:maxLines="1"
+            android:textColor="@color/teal_700"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:id="@+id/full_ride_data_layout">
+
+        <ImageView
+            android:id="@+id/driver_photo"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:padding="4dp"
+            android:background="@color/white"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tigorev" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:id="@+id/driver_details_ride_status"
+            android:layout_toEndOf="@id/driver_photo"
+            android:layout_marginTop="22dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/drivers_name"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="Driver's name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/important_text" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/button_text_size"
+                android:fontFamily="@font/open_sans"
+                android:textColor="@color/lightGrey"
+                android:text="MH-1432"
+                android:id="@+id/car_number_in_layout"
+                android:layout_marginTop="3dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/today_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_toStartOf="@id/ride_end_time_on_ride_completed"
+            android:fontFamily="@font/open_sans"
+            android:text="Today, "
+            android:textColor="@color/black"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ride_end_time_on_ride_completed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/open_sans"
+            android:text="0:00 am"
+            android:textColor="@color/black"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/line_divider_1_on_ride_completed"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/driver_photo"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/veryLightGrey" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/from_to_text_layout_on_ride_completed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_divider_1_on_ride_completed"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pickUpIndicator"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="2.5dp"
+                android:background="@drawable/pickup_location"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/pickUpTextView_ride_completed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/pickUpTextView_ride_completed" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/thinLine"
+                android:layout_width="2dp"
+                android:layout_height="35dp"
+                android:background="@color/veryLightGrey"
+                app:layout_constraintBottom_toTopOf="@+id/dropIndicator"
+                app:layout_constraintEnd_toEndOf="@+id/pickUpIndicator"
+                app:layout_constraintStart_toStartOf="@+id/pickUpIndicator"
+                app:layout_constraintTop_toBottomOf="@+id/pickUpIndicator" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dropIndicator"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:background="@drawable/ic_baseline_location_on_24_teal_green"
+                app:layout_constraintBottom_toBottomOf="@+id/dropTextView_ride_completed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thinLine"
+                app:layout_constraintTop_toTopOf="@+id/dropTextView_ride_completed" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dropTextView_ride_completed"
+                style="@style/CustomBoxWithoutOutline"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="7dp"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@color/white"
+                android:maxWidth="200dp"
+                android:minWidth="100dp"
+                android:textColorHint="@color/lightGrey"
+                app:hintEnabled="true"
+                app:layout_constraintStart_toEndOf="@+id/dropIndicator"
+                app:layout_constraintTop_toBottomOf="@+id/pickUpTextView_ride_completed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/where_to_edit_text_ride_completed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:ellipsize="end"
+                    android:ems="150"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="Where to"
+
+                    android:text="Airport T2"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/lightGrey"
+                    android:textSize="@dimen/important_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pickUpTextView_ride_completed"
+                style="@style/CustomBoxWithoutOutline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@color/white"
+                android:maxWidth="150dp"
+                android:minWidth="120dp"
+                android:textColorHint="@color/lightGrey"
+                app:hintEnabled="true"
+                app:layout_constraintStart_toEndOf="@+id/pickUpIndicator"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pickup_from_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:ems="150"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="Pickup from"
+                    android:text="Sion"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/lightGrey"
+                    android:textSize="@dimen/important_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/ride_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_divider_1_on_ride_completed"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="17dp"
+            android:fontFamily="@font/open_sans"
+            android:text="Ride status"
+            android:textColor="@color/lightGrey"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:background="@drawable/circular_cancel_button"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Completed"
+            android:layout_marginEnd="12dp"
+            android:layout_below="@id/ride_status_text"
+            android:layout_alignParentEnd="true"
+            android:paddingTop="5dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/teal_700"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:visibility="visible"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textSize="12dp"
+            android:id="@+id/completed_view_ui_rcwp"/>
+
+        <View
+            android:id="@+id/line_divider_2_on_ride_completed"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/from_to_text_layout_on_ride_completed"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/veryLightGrey" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/price_co2_view"
+            android:layout_below="@id/line_divider_2_on_ride_completed"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.5"
+                            android:orientation="vertical"
+                            android:id="@+id/avg_time_view">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/lightGrey"
+                                android:fontFamily="@font/open_sans"
+                                android:textSize="12dp"
+                                android:text="distance Covered"
+                                android:layout_gravity="center"
+                                android:id="@+id/avg_time_heading"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textStyle="bold"
+                                    android:id="@+id/distance_covered_text"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/important_text"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+            <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/veryLightGrey"
+                            android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:orientation="vertical"
+                android:id="@+id/total_price_view">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="Total Price"
+                    android:layout_gravity="center"
+                    android:id="@+id/total_price_heading"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Rs"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/important_text"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/total_price_of_the_ride_cost_after_ride"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="0.0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/important_text"
+                        android:textStyle="bold"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_divider_3_on_ride_completed"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/price_co2_view"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/veryLightGrey" />
+
+        <LinearLayout
+            android:id="@+id/pay_now_later_ui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_divider_3_on_ride_completed"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/pay_now_button_after_ride"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/green_button"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <ImageView
+                        android:id="@+id/credit_card_text1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_toStartOf="@id/center_partiotner2"
+                        android:fontFamily="@font/open_sans"
+                        android:src="@drawable/credit_card_svg"
+                        android:text="@string/Rs"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/important_text" />
+
+                    <TextView
+                        android:id="@+id/center_partiotner2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="."
+                        android:textColor="@android:color/transparent" />
+
+                    <TextView
+                        android:id="@+id/now_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_toEndOf="@id/center_partiotner2"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Now"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/button_text_size"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/pay_in_cash_after_ride"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_with_green_border"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <ImageView
+                        android:id="@+id/rupee_symbol"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_toStartOf="@id/center_partiotner3"
+                        android:fontFamily="@font/open_sans"
+                        android:src="@drawable/currency_rupee"
+                        android:text="@string/Rs"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/important_text" />
+
+                    <TextView
+                        android:id="@+id/center_partiotner3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="."
+                        android:textColor="@android:color/transparent" />
+
+                    <TextView
+                        android:id="@+id/cash_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="-8dp"
+                        android:layout_toEndOf="@id/center_partiotner3"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Cash"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/button_text_size"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

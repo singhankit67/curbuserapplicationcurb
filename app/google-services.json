@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "553169155052",
+    "project_id": "curbuserapplication-343c8",
+    "storage_bucket": "curbuserapplication-343c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553169155052:android:0901ab3eb71ae47d3f86c9",
+        "android_client_info": {
+          "package_name": "com.curb.curbuserapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553169155052-hcdveakqm8kcdaq9ocvf354slohf56jh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.curb.curbuserapplication",
+            "certificate_hash": "91aa9b2be73c49e1cbb4584bd38b29e5c8b01605"
+          }
+        },
+        {
+          "client_id": "553169155052-c6lm1vkk377addk289bvg8aoam00r1vh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBi8BV7wvzeFaOGVigICo2ewrr008QrAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553169155052-c6lm1vkk377addk289bvg8aoam00r1vh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

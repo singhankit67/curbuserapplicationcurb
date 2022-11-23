@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:background="@drawable/card_layout"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/transparent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:text="Are you sure?"
+            android:layout_marginTop="9dp"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/open_sans_bold"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_heading_size"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="You want to end this ride."
+            android:textAlignment="textStart"
+            android:layout_marginStart="9dp"
+            android:fontFamily="@font/open_sans"
+            android:textSize="@dimen/button_text_size"
+            android:textColor="@color/lightGrey"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="220dp"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonYES"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="YES"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/open_sans"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonNO"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="No"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/open_sans"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

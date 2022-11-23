@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ride_completed_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
+    android:layout_alignParentBottom="true"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0sp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    <com.google.android.material.card.MaterialCardView
+
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        app:cardElevation="15dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="15dp"
+        android:elevation="15dp"
+        app:cardCornerRadius="5dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Ride completed"
+                android:textColor="@color/black"
+                android:fontFamily="@font/open_sans_bold"
+                android:textSize="@dimen/text_heading_size"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/ride_completed"
+                app:lottie_autoPlay="true"
+                app:lottie_speed="0.6"
+                app:lottie_loop="true"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/total_amount_layout1"
+                android:layout_marginTop="6dp"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Rs"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_heading_size"/>
+
+                <TextView
+                    android:id="@+id/total_price_of_the_ride_cost_after_ride"
+                    android:layout_width="22dp"
+                    android:maxLength="5"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="000.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_heading_size"
+
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/important_text"
+                android:textColor="@color/black"
+                android:text="Thankyou for choosing CURB"
+                android:id="@+id/thankyou_text"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/pay_now_later_ui"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:visibility="visible"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/pay_now_button_after_ride"
+                    android:orientation="horizontal"
+                    android:background="@drawable/green_button">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/credit_card_text1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_toStartOf="@id/center_partiotner2"
+                            android:fontFamily="@font/open_sans"
+                            android:src="@drawable/credit_card_svg"
+                            android:text="@string/Rs"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/important_text" />
+
+                        <TextView
+                            android:id="@+id/center_partiotner2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="."
+                            android:textColor="@android:color/transparent" />
+
+                        <TextView
+                            android:id="@+id/now_text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="2dp"
+                            android:layout_toEndOf="@id/center_partiotner2"
+                            android:fontFamily="@font/open_sans"
+                            android:text="Now"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/button_text_size"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:id="@+id/pay_in_cash_after_ride"
+                    android:orientation="horizontal"
+                    android:background="@drawable/button_with_green_border">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/rupee_symbol"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_toStartOf="@id/center_partiotner3"
+                            android:fontFamily="@font/open_sans"
+                            android:src="@drawable/currency_rupee"
+                            android:text="@string/Rs"
+                            android:layout_marginEnd="4dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/important_text" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="."
+                            android:textColor="@android:color/transparent"
+                            android:id="@+id/center_partiotner3"
+                            android:layout_centerHorizontal="true"/>
+
+                        <TextView
+                            android:id="@+id/cash_text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="-8dp"
+                            android:layout_toEndOf="@id/center_partiotner3"
+                            android:fontFamily="@font/open_sans"
+                            android:text="Cash"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/button_text_size"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomBottomSheet">
+        <attr name="bottomsheetheadertext" format="string"/>
+    </declare-styleable>
+        <declare-styleable name="SingleRowCalendar">
+            <attr name="pastDaysCount" format="integer" />
+            <attr name="futureDaysCount" format="integer" />
+            <attr name="includeCurrentDate" format="boolean" />
+            <attr name="initialPositionIndex" format="integer" />
+            <attr name="multiSelection" format="boolean" />
+            <attr name="deselection" format="boolean" />
+            <attr name="longPress" format="boolean" />
+        </declare-styleable>
+    <declare-styleable name="CustomPrivacyContent">
+        <attr name="heading_text" format="string"/>
+        <attr name="content_text" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="CustomEditDetailsView">
+        <attr name="hintTextColor" format="color"/>
+        <attr name="backgrountTint" format="color"/>
+        <attr name="editHintText" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="CustomTextInputLayout">
+        <attr name="hintText" format="string"/>
+        <attr name="helperText" format="string"/>
+        <attr name="errorTexttext" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="CustomContentNameIconDescriptionView">
+        <attr name="contentHeading" format="string"/>
+        <attr name="contentDescription" format="string"/>
+        <attr name="contentIcon" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomContentNameIconView">
+        <attr name="content_Heading" format="string"/>
+        <attr name="content_Icon" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomShowDetailsView">
+        <attr name="accountHolderDetail" format="string"/>
+        <attr name="detailHeading" format="string"/>
+    </declare-styleable>
+
+    <!--    <declare-styleable name="CustomButton">-->
+    <!--        <attr name="customButtonText" format="string"/>-->
+    <!--    </declare-styleable>-->
+    <declare-styleable name="CustomButton">
+        <attr name="customButtonText" format="string"/>
+    </declare-styleable>
+</resources>

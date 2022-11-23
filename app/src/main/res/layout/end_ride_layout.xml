@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:id="@+id/enter_otp_card"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/white"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardUseCompatPadding="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/enter_otp_card"
+            app:layout_constraintEnd_toEndOf="@id/enter_otp_card"
+            app:layout_constraintTop_toTopOf="@id/enter_otp_card"
+            app:layout_constraintBottom_toBottomOf="@id/enter_otp_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="End ride ?"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_heading_size"
+                    android:textStyle="bold" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="170dp"
+                    android:layout_height="135dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="0dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:layout_marginBottom="10dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="false"
+                    android:id="@+id/end_ride_animation"
+                    app:lottie_rawRes="@raw/end_ride"
+                    app:lottie_speed="0.6" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/open_sans"
+                    android:maxLines="2"
+                    android:text="Are you sure you want to end your ongoing ride ?"
+                    android:textAlignment="center"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="@dimen/button_text_size" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/end_current_ongoing_ride"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/button_with_green_border"
+                    android:fontFamily="@font/open_sans"
+                    android:text="End ride"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/button_text_size"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/cancel_ongoing_process"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/ic_baseline_cancel_24" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:id="@+id/enter_otp_card"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/white"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardUseCompatPadding="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/enter_otp_card"
+            app:layout_constraintEnd_toEndOf="@id/enter_otp_card"
+            app:layout_constraintTop_toTopOf="@id/enter_otp_card"
+            app:layout_constraintBottom_toBottomOf="@id/enter_otp_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:paddingBottom="4dp"
+                android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="Tap the number to call"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/important_text" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:padding="2dp"
+                        android:src="@drawable/phone_in_talk"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:id="@+id/contact_no_toCall"
+                    android:textColor="@color/teal_700"
+                    android:textSize="@dimen/important_text" />
+                </LinearLayout>
+
+            </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancel_button_incontactus_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/open_sans"
+                    android:src="@drawable/ic_baseline_cancel_24"
+                    android:text="Cancel"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="@dimen/button_text_size"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

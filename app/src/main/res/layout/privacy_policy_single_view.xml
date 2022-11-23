@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/open_sans"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="@string/intro_heading"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/content_heading_for_privacy"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/content_heading_for_privacy"
+        app:layout_constraintStart_toStartOf="@id/content_heading_for_privacy"
+        app:layout_constraintTop_toBottomOf="@id/content_heading_for_privacy"
+        android:layout_marginTop="10dp"
+        android:id="@+id/content_text_for_privacy_policy"
+        android:fontFamily="@font/open_sans"
+        android:textColor="@color/lightGrey"
+        android:text="@string/information_we_collect_string"
+        android:textSize="@dimen/button_text_size"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

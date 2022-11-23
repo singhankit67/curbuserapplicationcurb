@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width = "match_parent"
+    android:layout_height = "50dp"
+    android:id="@+id/customEditDetailsView"
+    android:background="@color/white"
+    app:hintEnabled="true"
+    android:textColorHint="@color/lightGrey"
+    style="@style/CustomBoxWithoutOutline">
+    <!--            app:helperText="Minimum 7 characters"-->
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/lightGrey"
+        android:maxLines="1"
+        android:fontFamily="@font/open_sans"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textSize="@dimen/important_text"
+        android:id="@+id/edit_details_ui"/>
+</com.google.android.material.textfield.TextInputLayout>

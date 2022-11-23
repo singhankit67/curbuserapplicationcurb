@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0d132f7a"/>
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:paddingBottom="10dp"
+        android:id="@+id/recycler_view_ride_history_cancelled"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/no_ride_history_text_for_cancelled"
+        android:layout_gravity="center">
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            app:lottie_rawRes="@raw/no_ride_animation"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_gravity="center_horizontal"
+            app:lottie_speed="0.8"
+            android:layout_marginBottom="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No canceled rides !!"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="@font/open_sans_bold"
+        android:textSize="@dimen/important_text" />
+    </LinearLayout>
+
+</FrameLayout>

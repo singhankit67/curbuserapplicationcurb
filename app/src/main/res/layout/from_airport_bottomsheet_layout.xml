@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:visibility="visible"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingEnd="10dp"
+    android:paddingStart="6dp"
+    android:background="@drawable/card_layout"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:id="@+id/pickup_drop_layout_seperate"
+    android:elevation="10dp"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pickUpDropLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/card_layout"
+            android:id="@+id/pickUpTextView_main_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <ImageButton
+                android:id="@+id/pickup_location_edit_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/circular_cancel_button"
+                android:src="@drawable/edit_icon_white"
+                android:visibility="invisible"
+                android:layout_marginEnd="0dp"
+                app:layout_constraintStart_toEndOf="@id/pickUpTextView_main"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pickUpTextView_main"
+                android:layout_width="wrap_content"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:layout_height="0dp"
+                android:textColorHint="@color/lightGrey"
+                app:hintEnabled="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pickup_from_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:minWidth="120dp"
+                    android:maxWidth="200dp"
+                    android:layout_marginStart="40dp"
+                    android:singleLine="true"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="@string/hintForPickup"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ems="5"
+                    android:maxLength="12"
+                    android:ellipsize="end"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/important_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/open_sans"
+                app:layout_constraintTop_toTopOf="@+id/pickUpTextView_main"
+                app:layout_constraintBottom_toBottomOf="@+id/pickUpTextView_main"
+                android:text="0:00"
+                android:id="@+id/pickup_time"
+                android:layout_marginEnd="8dp"
+                android:textSize="12dp"
+                android:textColor="@color/lightGrey"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pickUpIndicator"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/pickup_location"
+            app:layout_constraintBottom_toBottomOf="@+id/pickUpTextView_main_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/pickUpTextView_main_layout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:id="@+id/dropTextView_main_layout"
+            android:background="@drawable/card_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pickUpTextView_main_layout"
+            app:layout_constraintStart_toStartOf="parent">
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/drop_to_location_edit_icon"
+                android:visibility="invisible"
+                android:layout_marginEnd="0dp"
+                android:background="@drawable/circular_cancel_button"
+                android:src="@drawable/edit_icon_white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/dropTextView_main"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width = "wrap_content"
+            android:layout_height = "0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/dropTextView_main"
+            android:background="@android:color/transparent"
+            app:hintEnabled="true"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:minWidth="100dp"
+            android:maxWidth="200dp"
+            android:textColorHint="@color/lightGrey">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/lightGrey"
+                android:minWidth="100dp"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:maxWidth="200dp"
+                android:maxLines="1"
+                android:layout_marginStart="40dp"
+                android:maxLength="12"
+                android:ems="5"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:hint="@string/hintForWhereto"
+                android:textColor="@color/black"
+                android:fontFamily="@font/open_sans"
+                android:textStyle="bold"
+                android:textSize="@dimen/important_text"
+                android:id="@+id/where_to_edit_text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/dropTextView_main"
+                app:layout_constraintTop_toTopOf="@+id/dropTextView_main"
+                android:text=""
+                android:fontFamily="@font/open_sans"
+                android:layout_marginEnd="8dp"
+                android:textSize="12dp"
+                android:id="@+id/drop_time"
+                android:textColor="@color/lightGrey"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dropIndicator"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="7.5dp"
+            android:background="@drawable/ic_baseline_location_on_24_teal_green"
+            app:layout_constraintBottom_toBottomOf="@+id/dropTextView_main_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dropTextView_main_layout" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:background="@color/veryLightGrey"
+            app:layout_constraintBottom_toTopOf="@+id/dropIndicator"
+            app:layout_constraintEnd_toEndOf="@+id/pickUpIndicator"
+            app:layout_constraintStart_toStartOf="@+id/pickUpIndicator"
+            app:layout_constraintTop_toBottomOf="@+id/pickUpIndicator" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--        <Button-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="@dimen/button_height"-->
+    <!--            android:text="continue"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            android:layout_marginBottom="10dp"-->
+    <!--            android:fontFamily="@font/open_sans"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:textSize="@dimen/button_text_size"-->
+    <!--            android:layout_marginStart="40dp"-->
+    <!--            android:layout_marginEnd="40dp"/>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

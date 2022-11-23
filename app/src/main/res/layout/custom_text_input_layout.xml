@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width = "match_parent"
+    android:layout_height = "90dp"
+    android:id = "@+id/customTextInputLayout"
+    android:hint = "Enter password"
+    app:hintEnabled="true"
+    android:textColorHint="@color/lightGrey"
+    app:endIconMode="custom"
+    style = "@style/CustomOutlineBox">
+    <!--            app:helperText="Minimum 7 characters"-->
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width = "match_parent"
+        android:layout_height = "60dp"
+        android:id = "@+id/inputEditText"
+        android:textColor="@color/black"
+        android:fontFamily="@font/open_sans"
+        android:textSize="@dimen/important_text"
+        android:inputType = "textPassword"/>
+</com.google.android.material.textfield.TextInputLayout>

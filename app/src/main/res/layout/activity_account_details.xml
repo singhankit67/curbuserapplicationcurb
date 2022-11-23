@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/activity_account_constraint_layout"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/account_details_main_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24_black"
+            android:background="#fff"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/goBackButton"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hey"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:id="@+id/userName_Of_the_user_to_ne_edited"
+            android:text=""
+            android:layout_marginStart="5dp"
+            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:text="!"
+                android:layout_marginStart="0dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:padding="3dp"
+                android:src="@drawable/curb_og_logo"
+                app:civ_border_color="#0d132f7a"
+                app:civ_border_width="3dp" />
+        </RelativeLayout>
+
+        <com.curb.curbuserapplication.CustomShowDetailsView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:id="@+id/show_mobile_details"
+            app:accountHolderDetail="+9199"
+            app:detailHeading="mobile"
+            android:visibility="visible"/>
+        <com.curb.curbuserapplication.CustomEditDetailsView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:hintTextColor="@color/lightGrey"
+            app:editHintText="Name"
+            app:errorEnabled="true"
+            app:backgrountTint="@color/lightGrey"
+            android:textColor="@color/black"
+            android:textSize="@dimen/important_text"
+            android:id="@+id/edit_name_View"/>
+        <com.curb.curbuserapplication.CustomShowDetailsView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:id="@+id/show_name_details"
+            app:accountHolderDetail="A"
+            app:detailHeading="name"
+            android:visibility="visible"/>
+
+        <com.curb.curbuserapplication.CustomEditDetailsView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:visibility="gone"
+            android:layout_marginStart="12dp"
+            app:errorEnabled="true"
+            android:layout_marginEnd="12dp"
+            app:hintTextColor="@color/lightGrey"
+            app:editHintText="Phone number"
+            app:backgrountTint="@color/lightGrey"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:id="@+id/edit_mobile_View"/>
+
+        <com.curb.curbuserapplication.CustomEditDetailsView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:visibility="gone"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:hintTextColor="@color/lightGrey"
+            app:editHintText="Email"
+            app:backgrountTint="@color/lightGrey"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textSize="@dimen/important_text"
+            android:id="@+id/edit_email_View"/>
+        <com.curb.curbuserapplication.CustomShowDetailsView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:id="@+id/show_email_details"
+            app:accountHolderDetail=""
+            app:detailHeading="email"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:id="@+id/UpdateChangesButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+        android:text="Submit"
+        android:background="@drawable/black_button"
+        android:fontFamily="@font/open_sans"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:gravity="center_vertical|center_horizontal"
+        app:customButtonText="UPDATE CHANGES"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

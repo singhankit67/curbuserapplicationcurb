@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gray">#888</color>
+    <color name="white_opaque_shade">#74FFFFFF</color>
+    <color name="white_darker_opaque_shade">#BFFFFFFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#81fda3</color>
+    <color name="teal_100">#3D754C</color>
+    <color name="teal_700">#1eb46f</color>
+    <color name="layer_color">#0d132f7a</color>
+    <color name="app_color_green">#017b29</color>
+    <color name="teal_700_light_shade">#800CBA70</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="black_light_shade">#4D222222</color>
+    <color name="black">#535559</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_light_shade">#80FFFFFF</color>
+    <color name="cancelButtonColor">#FF5753</color>
+    <color name="cancelButtonColorLightshade">#40FF5753</color>
+    <color name="themeColor1">#946c82</color>
+    <color name="themeColor2">#758b8b</color>
+    <color name="grey">#7a7a7a</color>
+    <color name="lightGrey">#a9a9aa</color>
+    <color name="differentcolor">#F8F8F8</color>
+    <color name="veryLightGrey">#f0f0f0</color>
+    <color name="purple">#7d64e6</color>
+    <color name="some">#F1F1F1</color>
+    <color name="logo_blue">#2971EF</color>
+    <color name="logo_blue_variant">#2962ff</color>
+</resources>

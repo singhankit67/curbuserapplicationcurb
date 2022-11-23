@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/ride_details_bottomsheet"
+    android:layout_height="wrap_content"
+    app:behavior_hideable="true"
+    android:background="@android:color/transparent"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="355dp"
+        app:cardBackgroundColor="@color/white"
+       app:cardCornerRadius="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="15dp"
+        tools:ignore="MissingConstraints">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/ride_details_main_layout"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="7dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:id="@+id/ride_scheduled_layout"
+                android:orientation="vertical"
+                android:padding="0sp"
+                android:visibility="gone"
+                app:behavior_peekHeight="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ride Scheduled "
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:textSize="25dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:id="@+id/ride_completed_text"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView_ride_booked_successfull"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
+                app:lottie_rawRes="@raw/ridebookedsuccessfulanimation"
+                app:lottie_speed="0.5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="visible"
+                android:layout_marginTop="-25dp"
+                android:layout_gravity="center_horizontal"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="-20dp"
+                    android:textSize="@dimen/button_text_size"
+                    android:text="Your ride has been scheduled.Driver details will be shared 15 minutes before your pickup time via message"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="@color/lightGrey"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/app_compat_button"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="25dp"
+                    android:fontFamily="@font/open_sans"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_with_green_border"
+                    android:textSize="@dimen/button_text_size"
+                    android:textColor="@color/black"
+                    android:text="Got it"
+                    android:id="@+id/pay_online_button"/>
+            </LinearLayout>
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/loadingAnimationWheel"
+                app:lottie_autoPlay="true"
+                android:layout_marginBottom="100dp"
+                app:lottie_loop="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:lottie_speed="0.5"
+                android:visibility="gone"
+                app:lottie_rawRes="@raw/greenloadinganimation"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:id="@+id/layout_without_loading_animation">
+
+    <LinearLayout
+        android:id="@+id/driver_toridewith_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/driver_image_view"
+            android:layout_width="130dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:focusableInTouchMode="true"
+            android:padding="4dp"
+            android:src="@drawable/tigorev"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:id="@+id/ride_scheduled_for_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/open_sans"
+                android:text="Ride for"
+                android:textColor="@color/lightGrey"
+                android:textSize="@dimen/important_text" />
+
+            <TextView
+                android:id="@+id/ride_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ride_scheduled_for_text"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="25 May 2022"
+                android:textColor="@color/black"
+                android:textSize="@dimen/important_text" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/number_of_passengers_view"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/ride_date"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:drawableLeft="@drawable/ic_baseline_person_24"-->
+<!--                android:fontFamily="@font/open_sans"-->
+<!--                android:padding="1dp"-->
+<!--                android:paddingStart="6dp"-->
+<!--                android:paddingEnd="6dp"-->
+<!--                android:text="3"-->
+<!--                android:textColor="@color/lightGrey"-->
+<!--                android:textSize="@dimen/no_of_travellers_text_size" />-->
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/veryLightGrey"
+        app:layout_constraintTop_toBottomOf="@id/driver_toridewith_details"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:id="@+id/line_divider"
+        android:layout_marginEnd="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/price_time_view"
+        app:layout_constraintTop_toBottomOf="@id/line_divider"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:id="@+id/total_price_view">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lightGrey"
+                android:textSize="@dimen/important_text"
+                android:fontFamily="@font/open_sans"
+                android:text="Total Price"
+                android:layout_gravity="center"
+                android:id="@+id/total_price_heading"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Rs"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_heading_size"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/total_price_of_the_ride_cost"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_heading_size"
+                    android:textStyle="bold"
+                     />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/veryLightGrey"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:id="@+id/avg_time_view">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lightGrey"
+                android:fontFamily="@font/open_sans"
+                android:textSize="@dimen/important_text"
+                android:text="Est. Time"
+                android:layout_gravity="center"
+                android:id="@+id/avg_time_heading"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0:00"
+                    android:textStyle="bold"
+                    android:id="@+id/estimated_time_text"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_heading_size"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/veryLightGrey"
+        app:layout_constraintTop_toBottomOf="@id/price_time_view"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="15dp"
+        android:id="@+id/line_divider1"
+        android:layout_marginEnd="15dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/lottie_anim"
+        app:lottie_rawRes="@raw/energy_saving_anim"
+        app:layout_constraintTop_toBottomOf="@id/line_divider1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        app:lottie_speed="0.75"
+        app:lottie_colorFilter="@color/teal_700"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/carbonEmissionSavedlayout"
+                    app:layout_constraintTop_toBottomOf="@id/lottie_anim"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/co2_text"
+                        android:textStyle="bold"
+                        android:layout_marginTop="0dp"
+                        android:id="@+id/co2_text"
+                        android:textColor="@color/teal_700"/>
+                    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:fontFamily="@font/open_sans"
+        android:text=" Emission saved : "
+        android:textStyle="bold"
+        android:layout_marginTop="0dp"
+        android:id="@+id/carbonEmissionSaved"
+        android:textColor="@color/teal_700"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/important_text"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@color/teal_700"
+                        android:id="@+id/carbonEmissionSavedValue"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    app:layout_constraintTop_toBottomOf="@id/carbonEmissionSavedlayout"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                        android:id="@+id/pay_now_button"
+                        android:orientation="horizontal"
+                        android:background="@drawable/green_button">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/credit_card_text"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="2dp"
+                                android:layout_toStartOf="@id/center_partiotner1"
+                                android:fontFamily="@font/open_sans"
+                                android:src="@drawable/credit_card_svg"
+                                android:text="@string/Rs"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/important_text" />
+
+                            <TextView
+                                android:id="@+id/center_partiotner1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text="."
+                                android:textColor="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/now_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="2dp"
+                                android:layout_toEndOf="@id/center_partiotner1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="Now"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/button_text_size"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:id="@+id/pay_after_ride_button"
+                        android:orientation="horizontal"
+                        android:background="@drawable/button_with_green_border">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/rupee_symbol"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_toStartOf="@id/center_partiotner"
+                                android:fontFamily="@font/open_sans"
+                                android:src="@drawable/currency_rupee"
+                                android:text="@string/Rs"
+                                android:layout_marginEnd="4dp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/important_text" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="."
+                                android:textColor="@android:color/transparent"
+                                android:id="@+id/center_partiotner"
+                                android:layout_centerHorizontal="true"/>
+
+                            <TextView
+                                android:id="@+id/cash_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="-8dp"
+                                android:layout_toEndOf="@id/center_partiotner"
+                                android:fontFamily="@font/open_sans"
+                                android:text="Cash"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/button_text_size"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
